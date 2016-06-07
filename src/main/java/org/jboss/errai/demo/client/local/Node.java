@@ -16,7 +16,6 @@
 
 package org.jboss.errai.demo.client.local;
 
-import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
@@ -27,36 +26,6 @@ import jsinterop.annotations.JsType;
  */
 @JsType(isNative = true)
 public interface Node {
-  @JsOverlay static final short ELEMENT_NODE = 1;
-  @JsOverlay static final short ATTRIBUTE_NODE = 2;
-  @JsOverlay static final short TEXT_NODE = 3;
-  @JsOverlay static final short CDATA_SECTION_NODE = 4;
-  @JsOverlay static final short ENTITY_REFERENCE_NODE = 5;
-  @JsOverlay static final short ENTITY_NODE = 6;
-  @JsOverlay static final short PROCESSING_INSTRUCTION_NODE = 7;
-  @JsOverlay static final short COMMENT_NODE = 8;
-  @JsOverlay static final short DOCUMENT_NODE = 9;
-  @JsOverlay static final short DOCUMENT_TYPE_NODE = 10;
-  @JsOverlay static final short DOCUMENT_FRAGMENT_NODE = 11;
-  @JsOverlay static final short NOTATION_NODE = 12;
-
-  @JsProperty String getNodeName();
-  @JsProperty String getNodeValue();
-  @JsProperty short getNodeType();
-  @JsProperty Node getParentNode();
-  @JsProperty Element getParentElement();
-  @JsProperty Node getFirstChild();
-  @JsProperty Node getLastChild();
-  @JsProperty Node getPreviousSibling();
-  @JsProperty Node getNextSibling();
-
   @JsProperty String getTextContent();
   @JsProperty void setTextContent(String textContent);
-
-  Node insertBefore(Node newChild, Node refChild);
-  Node replaceChild(Node newChild, Node oldChild);
-  Node removeChild(Node oldChild);
-  Node appendChild(Node newChild);
-  boolean hasChildNodes();
-  Node cloneNode(boolean deep);
 }

@@ -16,7 +16,6 @@
 
 package org.jboss.errai.demo.client.local;
 
-import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 /**
@@ -26,65 +25,4 @@ import jsinterop.annotations.JsType;
  */
 @JsType(isNative = true)
 public interface HTMLElement extends Element {
-  @JsProperty String getInnerHTML();
-  @JsProperty void setInnerHTML(String innerHtml);
-
-  @JsProperty String getOuterHTML();
-  @JsProperty void setOuterHTML(String outerHtml);
-
-  void insertAdjacentHTML(String position, String text);
-
-  @JsProperty String getId();
-  @JsProperty void setId(String id);
-
-  @JsProperty String getTitle();
-  @JsProperty void setTitle(String title);
-
-  @JsProperty String getLang();
-  @JsProperty void setLang(String lang);
-
-  @JsProperty String getDir();
-  @JsProperty void setDir(String dir);
-
-  @JsProperty String getClassName();
-  @JsProperty void setClassName(String property);
-
-  @JsProperty boolean getHidden();
-  @JsProperty void setHidden(boolean hidden);
-
-  void click();
-
-  @JsProperty int getTabIndex();
-  @JsProperty void setTabIndex(int tabIndex);
-
-  void focus();
-  void blur();
-
-  @JsProperty String getAccessKey();
-  @JsProperty void setAccessKey(String accessKey);
-
-  @JsProperty String getAccessKeyLabel();
-
-  @JsProperty String getBaseURI();
-
-  @JsProperty String getLocalName();
-
-  @JsProperty String getNamespaceURI();
-
-  @JsProperty boolean getDraggable();
-  @JsProperty void setDraggable(boolean draggable);
-
-  @JsProperty String getContentEditable();
-  @JsProperty void setContentEditable(String contentEditable);
-
-  @JsProperty(name="isContentEditable") boolean isContentEditable();
-
-  @JsProperty boolean getSpellcheck();
-  @JsProperty void setSpellcheck(boolean spellcheck);
-
-  @JsProperty String getCommandType();
-
-  @JsProperty String getLabel();
-
-  @JsProperty String getIcon();
 }

@@ -16,7 +16,6 @@
 
 package org.jboss.errai.demo.client.local;
 
-import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 /**
@@ -26,59 +25,4 @@ import jsinterop.annotations.JsType;
  */
 @JsType(isNative = true)
 public interface Anchor extends HTMLElement {
-  @JsProperty String getCharset();
-  @JsProperty void setCharset(String charset);
-
-  @JsProperty String getCoords();
-  @JsProperty void setCoords(String coords);
-
-  @JsProperty String getHash();
-  @JsProperty void setHash(String hash);
-
-  @JsProperty String getHost();
-  @JsProperty void setHost(String host);
-
-  @JsProperty String getHostname();
-  @JsProperty void setHostname(String hostname);
-
-  @JsProperty String getHref();
-  @JsProperty void setHref(String href);
-
-  @JsProperty String getHreflang();
-  @JsProperty void setHreflang(String hreflang);
-
-  @JsProperty String getMedia();
-  @JsProperty void setMedia(String media);
-
-  @JsProperty String getName();
-  @JsProperty void setName(String name);
-
-  @JsProperty String getOrigin();
-
-  @JsProperty String getPathname();
-  @JsProperty void setPathname(String pathname);
-
-  @JsProperty String getPort();
-  @JsProperty void setPort(String port);
-
-  @JsProperty String getProtocol();
-  @JsProperty void setProtocol(String protocol);
-
-  @JsProperty String getRel();
-  @JsProperty void setRel(String rel);
-
-  @JsProperty String getRev();
-  @JsProperty void setRev(String rev);
-
-  @JsProperty String getSearch();
-  @JsProperty void setSearch(String search);
-
-  @JsProperty String getShape();
-  @JsProperty void setShape(String shape);
-
-  @JsProperty String getTarget();
-  @JsProperty void setTarget(String target);
-
-  @JsProperty String getType();
-  @JsProperty void setType(String type);
 }

@@ -16,7 +16,6 @@
 
 package org.jboss.errai.demo.client.local;
 
-import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 /**
@@ -26,10 +25,4 @@ import jsinterop.annotations.JsType;
  */
 @JsType(isNative = true)
 public interface Element extends Node {
-  @JsProperty String getTagName();
-
-  String getAttribute(String name);
-  void setAttribute(String name, String value);
-  void removeAttribute(String name);
-  void normalize();
 }
