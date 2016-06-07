@@ -3,8 +3,7 @@
             "http://gwtproject.org/doctype/2.8.0/gwt-module.dtd">
 
 <module rename-to="app">
-  <inherits name="org.jboss.errai.common.ErraiCommon" />
-  
+  <inherits name='com.google.gwt.user.User'/>
   <entry-point class="org.jboss.errai.demo.client.local.Entry"/>
 
   <set-property name="gwt.logging.enabled" value="TRUE"/>

@@ -16,21 +16,20 @@
 
 package org.jboss.errai.demo.client.local;
 
-import jsinterop.annotations.JsOverlay;
-import jsinterop.annotations.JsPackage;
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
-@JsType(isNative = true, namespace = JsPackage.GLOBAL, name = "HTMLAnchorElement")
-public abstract class EmailAnchor implements Anchor, HasValue<String> {
+/**
+ *
+ * @author Max Barkley <mbarkley@redhat.com>
+ * @see <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Web API</a>
+ */
+@JsType(isNative = true)
+public interface Element extends Node {
+  @JsProperty String getTagName();
 
-  @JsOverlay @Override
-  public final String getValue() {
-    return getTextContent();
-  }
-
-  @JsOverlay @Override
-  public final void setValue(final String value) {
-    setTextContent(value);
-    setHref("mailto:" + value);
-  }
+  String getAttribute(String name);
+  void setAttribute(String name, String value);
+  void removeAttribute(String name);
+  void normalize();
 }

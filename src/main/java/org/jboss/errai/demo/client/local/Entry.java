@@ -16,33 +16,19 @@
 
 package org.jboss.errai.demo.client.local;
 
-import org.jboss.errai.common.client.dom.Div;
-import org.jboss.errai.common.client.dom.Document;
-import org.jboss.errai.common.client.dom.Window;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.dom.client.DivElement;
+import com.google.gwt.dom.client.Document;
 
 public class Entry implements EntryPoint {
 
-  private final Document doc = Window.getDocument();
+  private final DivElement display = Document.get().createDivElement();
 
-  private final Logger logger = LoggerFactory.getLogger(Entry.class);
-
-  private final Div display = (Div) doc.createElement("div");
-
-  private final EmailAnchor anchorSubtype = (EmailAnchor) doc.createElement("a");
-
-  private void println(final String text) {
-    final Div line = (Div) doc.createElement("div");
-    line.setTextContent(text);
-    display.appendChild(line);
-  }
+  private final EmailAnchor anchorSubtype = (EmailAnchor) (Object) Document.get().createElement("a");
 
   @Override
   public void onModuleLoad() {
-    doc.getBody().appendChild(display);
+    Document.get().getBody().appendChild(display);
 
     try {
       anchorSubtype.getTextContent();
@@ -50,8 +36,14 @@ public class Entry implements EntryPoint {
     } catch (final Throwable t) {
       final String msg = "Failed to access textContent property of anchor subtype.";
       println(msg + " See console for details.");
-      logger.error(msg, t);
+      throw new RuntimeException(msg, t);
     }
+  }
+
+  private void println(final String text) {
+    final DivElement line = Document.get().createDivElement();
+    line.setInnerText(text);
+    display.appendChild(line);
   }
 
 }
