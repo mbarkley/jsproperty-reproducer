@@ -16,6 +16,7 @@
 
 package org.jboss.errai.demo.client.local;
 
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 /**
@@ -24,5 +25,7 @@ import jsinterop.annotations.JsType;
  * @see <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement">Web API</a>
  */
 @JsType(isNative = true)
-public interface Anchor extends HTMLElement {
+public interface Anchor {
+  @JsProperty String getTextContent();
+  @JsProperty void setTextContent(String textContent);
 }
