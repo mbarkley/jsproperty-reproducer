@@ -16,21 +16,9 @@
 
 package org.jboss.errai.demo.client.local;
 
-import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsType;
 
 @JsType(isNative = true, namespace = JsPackage.GLOBAL, name = "HTMLAnchorElement")
-public abstract class EmailAnchor implements Anchor, HasValue<String> {
-
-  @JsOverlay @Override
-  public final String getValue() {
-    return getTextContent();
-  }
-
-  @JsOverlay @Override
-  public final void setValue(final String value) {
-    setTextContent(value);
-    setHref("mailto:" + value);
-  }
+public abstract class EmailAnchor implements Anchor {
 }

@@ -36,7 +36,7 @@ public class Entry implements EntryPoint {
     } catch (final Throwable t) {
       final String msg = "Failed to access textContent property of anchor subtype.";
       println(msg + " See console for details.");
-      throw new RuntimeException(msg, t);
+      throw t;
     }
   }
 
