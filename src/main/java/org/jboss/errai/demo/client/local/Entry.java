@@ -26,10 +26,20 @@ public class Entry implements EntryPoint {
 
   private final EmailAnchor anchorSubtype = (EmailAnchor) (Object) Document.get().createElement("a");
 
+  private final Anchor anchor = (Anchor) Document.get().createElement("a");
+
   @Override
   public void onModuleLoad() {
     Document.get().getBody().appendChild(display);
 
+    try {
+      anchor.getTextContent();
+      println("Successfully accessed textContent propery of anchor.");
+    } catch (final Throwable t) {
+      final String msg = "Failed to access textContent property of anchor.";
+      println(msg + " See console for details.");
+      throw t;
+    }
     try {
       anchorSubtype.getTextContent();
       println("Successfully accessed textContent propery of anchor subtype.");
