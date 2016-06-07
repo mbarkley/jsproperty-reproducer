@@ -16,31 +16,32 @@
 
 package org.jboss.errai.demo.client.local;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-
 import org.jboss.errai.common.client.dom.Div;
 import org.jboss.errai.common.client.dom.Document;
-import org.jboss.errai.ioc.client.api.EntryPoint;
+import org.jboss.errai.common.client.dom.Window;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@EntryPoint
-public class Entry {
+import com.google.gwt.core.client.EntryPoint;
 
-  @Inject
-  private Logger logger;
+public class Entry implements EntryPoint {
 
-  @Inject
-  private Div display;
+  private final Document doc = Window.getDocument();
 
-  @Inject
-  private Document doc;
+  private final Logger logger = LoggerFactory.getLogger(Entry.class);
 
-  @Inject
-  private EmailAnchor anchorSubtype;
+  private final Div display = (Div) doc.createElement("div");
 
-  @PostConstruct
-  public void start() {
+  private final EmailAnchor anchorSubtype = (EmailAnchor) doc.createElement("a");
+
+  private void println(final String text) {
+    final Div line = (Div) doc.createElement("div");
+    line.setTextContent(text);
+    display.appendChild(line);
+  }
+
+  @Override
+  public void onModuleLoad() {
     doc.getBody().appendChild(display);
 
     try {
@@ -51,12 +52,6 @@ public class Entry {
       println(msg + " See console for details.");
       logger.error(msg, t);
     }
-  }
-
-  private void println(final String text) {
-    final Div line = (Div) doc.createElement("div");
-    line.setTextContent(text);
-    display.appendChild(line);
   }
 
 }
